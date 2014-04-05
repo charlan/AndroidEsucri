@@ -4,6 +4,7 @@ import java.util.List;
 
 import android.app.Activity;
 import android.content.Context;
+import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.preference.PreferenceManager;
@@ -48,6 +49,7 @@ public class MainActivity extends Activity implements View.OnKeyListener {
 		SharedPreferences prefs = PreferenceManager.getDefaultSharedPreferences(this);
 		String listName = prefs.getString("pref_listname", "");
 		setTitle(listName);
+		super.onResume();
 	}
 
 	@Override
@@ -58,8 +60,13 @@ public class MainActivity extends Activity implements View.OnKeyListener {
 	
 	public boolean onOptionItemSlected(MenuItem item){
 		switch(item.getItemId()){
-		//case R.id.action_settings == 0;
-		}
+		case R.id.action_settings:
+			startActivity(new Intent(this, SettingsActivity.class));
+			return true;
+			default:
+				return super.onOptionsItemSelected(item);
+				
+				}
 	}
 
 	private class TodolistAdapter extends ArrayAdapter<TodoItem> implements
