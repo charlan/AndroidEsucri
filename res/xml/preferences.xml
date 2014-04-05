@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android" >
+    <PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android">
+        <PreferenceCategory>
+            <EditTextPreference android:key="pref_listname" android:title="List name" android:summary="change list name" android:defaultValue="@string/app_name"/>
+        </PreferenceCategory>
+    </PreferenceScreen>
+    
+
+</PreferenceScreen>
